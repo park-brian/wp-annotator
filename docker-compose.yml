@@ -26,6 +26,9 @@ services:
     image: mysql
     environment:
       - MYSQL_ROOT_PASSWORD=temporary_root_password
+      - MYSQL_USER=wordpress
+      - MYSQL_PASSWORD=wordpress
+      - MYSQL_DATABASE=wordpress
     expose:
       - '3306'
     ports:
@@ -44,7 +47,7 @@ services:
       - annotator-store
       - elasticsearch
     links:
-      - mysql 
+      - mysql
       - annotator-store
       - elasticsearch
     ports:
