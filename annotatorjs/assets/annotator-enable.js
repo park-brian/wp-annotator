@@ -1,4 +1,7 @@
-jQuery('.entry-content')
+window.$ = window.jQuery;
+
+$(function() {
+  /\d{4}\/\d{2}\/\d{2}/.test(location.pathname) && $('.entry-content')
   .annotator()
   .annotator('setupPlugins', {}, {
       Auth: false,
@@ -19,3 +22,4 @@ jQuery('.entry-content')
         }
       }
   });
+});
