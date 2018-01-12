@@ -1,0 +1,52 @@
+version: '3.2'
+services:
+  elasticsearch:
+    build:
+      context: ./images
+      dockerfile: elasticsearch.dockerfile
+    expose:
+      - '9200'
+    ports:
+      - '9200:9200'
+
+  annotator-store:
+    build:
+      context: ./images
+      dockerfile: annotator-store.dockerfile
+    depends_on:
+      - elasticsearch
+    links:
+      - elasticsearch
+    expose:
+      - '5000'
+    ports:
+      - '5000:5000'
+
+  mysql:
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=temporary_root_password
+    expose:
+      - '3306'
+    ports:
+      - '3306:3306'
+
+  wordpress:
+    build:
+      context: ./images
+      dockerfile: wordpress.dockerfile
+    volumes:
+      - type: bind
+        source: ./wordpress
+        target: /var/www/html
+    depends_on:
+      - mysql
+      - annotator-store
+      - elasticsearch
+    links:
+      - mysql 
+      - annotator-store
+      - elasticsearch
+    ports:
+      - '80:80'
+

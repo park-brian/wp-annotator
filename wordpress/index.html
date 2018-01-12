@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus nisi eu est blandit placerat. Sed vitae vulputate lectus. Morbi quis ante et augue euismod cursus sed nec elit. Vestibulum ac aliquet nulla, ut lobortis nibh. Nam non libero orci. Nunc a nisi sapien. Ut at justo non mauris dictum euismod rhoncus vitae mauris. Maecenas imperdiet tortor enim, in vulputate arcu ultricies quis. In et ligula viverra sem fringilla rhoncus et id urna. Pellentesque vitae convallis nibh, vel gravida nibh. Integer viverra suscipit suscipit. Nullam dui dui, pellentesque et laoreet nec, finibus ac est. Integer finibus gravida mi, at euismod lorem.
+
+        Nam venenatis vestibulum porta. Phasellus egestas tellus ut nibh pretium, venenatis tempor felis consectetur. Nunc in ultricies nunc. Mauris non pulvinar nulla. Quisque a fermentum lacus, quis rutrum felis. Curabitur at massa feugiat, lobortis diam in, vehicula enim. Phasellus pellentesque venenatis enim ut blandit. Etiam non dignissim velit.
+        
+        Ut sed finibus justo. Maecenas sollicitudin sed quam ac lacinia. Curabitur enim purus, fringilla id sem eget, tempus fringilla ipsum. Ut vel eros sit amet felis lacinia semper. Donec sollicitudin fringilla ligula ut feugiat. Etiam et fermentum libero, a sollicitudin dui. Curabitur felis metus, dapibus quis euismod a, tincidunt id sapien. Donec mauris tellus, venenatis quis ligula ac, blandit elementum diam. Nullam suscipit euismod euismod. Pellentesque consequat velit magna, nec pretium nisi cursus sit amet. Ut justo felis, elementum et lacus eu, maximus semper dolor. Integer sit amet dapibus enim.
+        
+        Morbi hendrerit lacus neque, at semper nulla placerat quis. Pellentesque tincidunt risus nec felis vulputate, non vestibulum metus tincidunt. Nulla augue felis, ultrices id tortor maximus, fermentum porta mauris. Nullam ac mattis purus. Morbi sit amet fringilla ipsum. Praesent accumsan pulvinar arcu ut lacinia. Praesent mattis malesuada orci id sollicitudin. Nullam imperdiet ligula velit. Fusce at auctor odio. Duis faucibus quam eget elit euismod, sit amet accumsan ipsum tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ultricies ante eu consectetur pellentesque. Curabitur suscipit neque eu risus mattis aliquet. Ut in finibus metus.
+        
+        Aliquam vehicula finibus tortor quis suscipit. In sed facilisis turpis. Suspendisse aliquet eros sagittis nisi maximus tristique. Suspendisse ut est aliquet, maximus massa vitae, congue nulla. Integer pulvinar nunc id erat suscipit, sit amet bibendum nulla posuere. Ut mattis vel ex ac dictum. Nulla varius elementum metus sed blandit. Curabitur dictum iaculis dolor sed auctor. Nam dictum mi nisl, a lobortis ipsum ullamcorper ac. Proin interdum et magna nec rhoncus. In vel mollis nisi. Proin posuere arcu dolor, id ullamcorper ante tempus ut. Sed eu velit eu dolor feugiat tempus. Donec porta mi est, nec condimentum lectus pellentesque posuere. In malesuada justo felis, et tincidunt sem tristique ultrices. Integer ac sagittis eros, quis ornare elit.        
+    </p>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+    <script src="http://assets.annotateit.org/annotator/v1.2.5/annotator-full.min.js"></script>
+    <link rel="stylesheet" href="http://assets.annotateit.org/annotator/v1.2.5/annotator.min.css">
+
+    <script>
+        $('body').annotator().annotator()
+                 .annotator('setupPlugins', {}, {
+                     Auth: false,
+                     Filter: false,
+                     Tags: false,
+                     Markdown: false,
+                     Permissions: {
+                        user: 'Anonymous',
+                     },
+                     Store: {
+                        prefix: location.protocol + "//" + location.hostname + ':5000',
+                        annotationData: {
+                            'uri': window.location.href
+                        },
+
+                        loadFromSearch: {
+                            'limit': 20,
+                            'uri': window.location.href
+                        }
+
+
+                     }
+                 });
+    </script>
+</body>
+</html>
